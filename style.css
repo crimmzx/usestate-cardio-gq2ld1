@@ -1,0 +1,76 @@
+h1, p {
+  font-family: Lato;
+}
+
+html {
+  font-family: Lato, sans-serif;
+}
+
+body {
+  counter-reset: problem-number;
+}
+
+div.problem {
+  counter-increment: problem-number;
+  border-bottom: 1px solid black;
+  padding: 30px 0;
+}
+
+div.problem.one, div.problem.three {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.problem:before {
+  content: counter(problem-number);
+  background: goldenrod;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 100%;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.traffic-light {
+  width: 100px;
+  height: 275px;
+  background: #333;
+  border: 5px solid #666;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+div.traffic-light div {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+}
+
+div.traffic-light div.off {
+  opacity: 0.1;
+}
+
+div.traffic-light div.on {
+  opacity: 1;
+}
+
+div.traffic-light div.red {
+  background: red;
+}
+
+div.traffic-light div.yellow {
+  background: yellow;
+}
+
+div.traffic-light div.green {
+  background: green;
+}
