@@ -24,20 +24,28 @@ import React from "react";
 
 const Prob4 = () => {
   // all your code goes here!
+  const[height, setHeight] = React.useState(100)
+  const[width, setWidth] = React.useState(100)
+
 
   // Example code for handling window resizes
-  // function handleResize(e) {
-  //   const newWidth = window.innerWidth;
-  //   const newHeight = window.innerHeight;
-  // }
+  function handleResize(e) {
+    useEffect(() => {
+      window.addEventListener("resize", handleResize);
+    })
+    const newWidth = window.innerWidth;
+    const newHeight = window.innerHeight;
+    setHeight(newHeight);
+    setWidth(newWidth);
+   }
 
-  // window.addEventListener("resize", handleResize); // adds event listener
-  // window.removeListener("resize", handleResize); // removes event listener
+  // adds event listener
+  //window.removeListener("resize", handleResize); // removes event listener
 
   return (
     <div className="problem">
-      <p>The window width is: {"FILL ME IN"}</p>
-      <p>The window height is: {"FILL ME IN"}</p>
+      <p>The window width is: {height}</p>
+      <p>The window height is: {width}</p>
     </div>
   );
 };
