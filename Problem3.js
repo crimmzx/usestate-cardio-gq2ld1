@@ -28,18 +28,18 @@ import React from 'react';
 
 const Prob3 = () => {
   // create any state variables you'll need
-  const [leftValue, setLeftValue] = useState();
-  const [rightValue, setRightValue] = useState();
+  const [leftValue, setLeftValue] = React.useState();
+  const [rightValue, setRightValue] = React.useState();
 
   const changeLefthandNumber = (event) => {
     // handle the input into the leftmost input box
-    setLeftValue(this.event.value);
+    setLeftValue(parseInt(event.target.value));
     console.log(leftValue);
   };
 
   const changeRighthandNumber = (event) => {
     // handle the input into the rightmost input box
-    setRightValue(this.event.value);
+    setRightValue(parseInt(event.target.value));
     console.log(rightValue);
   };
 
