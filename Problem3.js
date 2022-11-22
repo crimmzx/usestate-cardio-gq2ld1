@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 
 /**
  * PROBLEM 3: BABY'S FIRST CALCULATOR
- * 
+ *
  * Let's tackle something a bit more useful: a simple addition calculator!
  * This is a little trickier, since we need to deal with user input in order
- * to set the values of our state variables. So, check out the template code 
+ * to set the values of our state variables. So, check out the template code
  * shown below!
- * 
+ *
  * 1. Create state variables for the left and righthand values we'll be adding.
  *    Note you won't need a state variable for displaying the answer!
  * 2. Check out the setLefthandNumber function. Notice this gets called every time
@@ -28,23 +28,29 @@ import React from 'react'
 
 const Prob3 = () => {
   // create any state variables you'll need
+  const [leftValue, setLeftValue] = useState();
+  const [rightValue, setRightValue] = useState();
 
   const changeLefthandNumber = (event) => {
     // handle the input into the leftmost input box
-  }
+    setLeftValue(this.event.value);
+    console.log(leftValue);
+  };
 
   const changeRighthandNumber = (event) => {
     // handle the input into the rightmost input box
-  }
+    setRightValue(this.event.value);
+    console.log(rightValue);
+  };
 
   return (
     <div className="problem three">
-    <input onChange={changeLefthandNumber} />
-    <p>+</p>
-    <input onChange={changeRighthandNumber} />
-    <p>= {0 + 0}</p>
+      <input onChange={changeLefthandNumber} />
+      <p>+</p>
+      <input onChange={changeRighthandNumber} />
+      <p>= {leftValue + rightValue}</p>
     </div>
-  )
-}
+  );
+};
 
-export default Prob3
+export default Prob3;
